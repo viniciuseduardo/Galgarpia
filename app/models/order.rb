@@ -2,21 +2,21 @@ class Order < ActiveRecord::Base
   has_many :line_items, :dependent => :destroy
   belongs_to :user
 
-  scope :in_progress, where("orders.checked_out_at IS NULL")
-  scope :complete, where("orders.checked_out_at IS NOT NULL")
+  scope :no_action, where("orders.payment_status = 'sem acao'")
+  scope :in_progress, where("orders.payment_status IN ('em andamento','enviado')")
+  scope :complete, where("orders.payment_status = 'concluido'")
 
-  COMPLETE = "complete"
-  IN_PROGRESS = "in_progress"
-
+  STATUS = ["sem acao", "em andamento", "enviado", "concluido"]
+  METHOD = ["boleto", "cartao de credito", "cartao de debito", "transferencia"]
   def self.find_with_product(product)
     return [] unless product
-    complete.includes(:line_items).
+    includes(:line_items).
       where(["line_items.product_id = ?", product.id]).
-      order("orders.checked_out_at DESC")
+      order("orders.payment_date DESC")
   end
 
   def checkout!
-    self.checked_out_at = Time.now
+    self.payment_date = Time.now
     self.save
   end
 
@@ -26,12 +26,12 @@ class Order < ActiveRecord::Base
   end
 
   def state
-    checked_out_at.nil? ? IN_PROGRESS : COMPLETE
+    payment_status
   end
 
   def display_name
     ActionController::Base.helpers.number_to_currency(total_price) + 
-      " - Order ##{id} (#{user.username})"
+      " - Order ##{id} (#{user.nome})"
   end
 
 end

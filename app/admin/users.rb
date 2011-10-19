@@ -1,18 +1,18 @@
 ActiveAdmin.register User, :as => "Customer" do
-
-  filter :username
+  filter :nome
   filter :email
-  filter :created_at
-
+  filter :cpf  
+  
   index do
-    id_column
-    column :username
-    column :email
-    column :created_at
-    default_actions
+      column("Email"){ |customer| auto_link customer }
+      column :nome
+      column :cpf
+      column :endereco
+      column :telefone
+      column :celular
   end
 
-  show :title => :username do
+  show :title => :nome do
     panel "Order History" do
       table_for(customer.orders) do
         column("Order", :sortable => :id) {|order| link_to "##{order.id}", admin_order_path(order) }
@@ -25,7 +25,7 @@ ActiveAdmin.register User, :as => "Customer" do
   end
 
   sidebar "Customer Details", :only => :show do
-    attributes_table_for customer, :username, :email, :created_at
+    attributes_table_for customer, :nome, :email, :telefone, :celular, :created_at
   end
 
   sidebar "Order History", :only => :show do
@@ -33,9 +33,5 @@ ActiveAdmin.register User, :as => "Customer" do
       row("Total Orders") { customer.orders.complete.count }
       row("Total Value") { number_to_currency customer.orders.complete.sum(:total_price) }
     end
-  end
-
-  sidebar "Active Admin Demo" do
-    render('/admin/sidebar_links', :model => 'users')
   end
 end

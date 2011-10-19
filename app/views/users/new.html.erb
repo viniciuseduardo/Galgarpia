@@ -2,23 +2,27 @@
 
 <p>Already have an account? <%= link_to "Log in", login_path %>.</p>
 
-<%= form_for @user do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email, "Email Address" %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation, "Confirm Password" %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p><%= f.submit "Sign up" %></p>
+<%= semantic_form_for(@user, :validate => true) do |f| %>
+
+  <div><%= f.input :nome %></div>
+
+  <div><%= f.input :cpf %></div>
+
+  <div><%= f.input :endereco %>
+
+  <div><%= f.input :sexo, :as => :select, :collection => [ 'Masculino', 'Feminino' ] %>
+
+  <div><%= f.input :data_nasc, :as => :date, :start_year => Time.now.year - 50, :end_year => Time.now.year - 5 %></div>
+
+  <div><%= f.input :telefone, :as => :phone %></div>
+
+  <div><%= f.input :celular, :as => :phone %></div>
+
+  <div><%= f.input :email, :as => :email, :validate => true %></div>
+
+  <div><%= f.input :password, :as => :password, :validate => true  %></div>
+
+  <div><%= f.input :password_confirmation, :as => :password  %></div>
+
+  <div><%= f.commit_button "Cadastrar" %></div>
 <% end %>

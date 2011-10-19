@@ -2,3 +2,7 @@
 .icon {
   display: none !important; 
 }
+.status.concluido { background: #8daa92; }
+.status.enviado { background: #87CEEB; }
+.status.em_andamento { background: #e29b20; }
+.status.sem_acao { background: #d45f53; }

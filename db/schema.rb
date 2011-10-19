@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110426072324) do
+ActiveRecord::Schema.define(:version => 20111019040356) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20110426072324) do
   create_table "line_items", :force => true do |t|
     t.integer  "order_id"
     t.integer  "product_id"
-    t.decimal  "price"
+    t.decimal  "price",      :precision => 8, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,16 +57,23 @@ ActiveRecord::Schema.define(:version => 20110426072324) do
 
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "checked_out_at"
     t.decimal  "total_price",    :precision => 8, :scale => 2, :default => 0.0
+    t.string   "payment_method"
+    t.datetime "payment_date"
+    t.string   "payment_status",                               :default => "sem acao"
+    t.integer  "payment_plots"
+    t.integer  "payment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "orders", ["checked_out_at"], :name => "index_orders_on_checked_out_at"
+  add_index "orders", ["payment_date"], :name => "index_orders_on_payment_date"
+  add_index "orders", ["payment_method"], :name => "index_orders_on_payment_method"
+  add_index "orders", ["payment_status"], :name => "index_orders_on_payment_status"
   add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
 
   create_table "products", :force => true do |t|
+    t.integer  "site_id"
     t.string   "title"
     t.text     "description"
     t.string   "author"
@@ -81,10 +88,24 @@ ActiveRecord::Schema.define(:version => 20110426072324) do
   add_index "products", ["available_on"], :name => "index_products_on_available_on"
   add_index "products", ["featured"], :name => "index_products_on_featured"
 
+  create_table "sites", :force => true do |t|
+    t.string   "url"
+    t.string   "nome"
+    t.string   "link_afiliados"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "password_hash"
+    t.string   "nome",          :null => false
+    t.string   "cpf",           :null => false
+    t.date     "data_nasc",     :null => false
+    t.text     "endereco",      :null => false
+    t.string   "sexo",          :null => false
+    t.string   "telefone",      :null => false
+    t.string   "celular"
+    t.string   "email",         :null => false
+    t.string   "password_hash", :null => false
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  belongs_to :site
 
   # Named Scopes
   scope :available, lambda{ where("available_on < ?", Date.today) }

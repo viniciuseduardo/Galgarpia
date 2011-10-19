@@ -1,5 +1,6 @@
 ActiveAdmin.register Product do
-
+  filter :site_nome, :as => :string, :label => 'Site'
+  
   scope :all, :default => true
   scope :available do |products|
     products.where("available_on < ?", Date.today)
@@ -35,7 +36,4 @@ ActiveAdmin.register Product do
     end.join(content_tag("br")).html_safe
   end
 
-  sidebar "Active Admin Demo" do
-    render('/admin/sidebar_links', :model => 'products')
-  end
 end
