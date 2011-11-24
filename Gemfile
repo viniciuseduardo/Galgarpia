@@ -10,6 +10,7 @@ gem 'client_side_validations', '3.0.5'
 gem "jquery-rails"
 gem 'brazilian-rails'
 gem "capistrano"
+gem "pagseguro", "~> 0.1.10"
 
 group :development do
   gem 'mechanize'

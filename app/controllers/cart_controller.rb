@@ -1,7 +1,26 @@
 class CartController < ApplicationController
 
-  before_filter :login_required
-  before_filter :find_cart
+  before_filter :login_required, :except => [ :confirm ]
+  before_filter :find_cart, :except => [ :confirm ]
+  skip_before_filter :verify_authenticity_token
+  
+  
+  def show
+    # Instanciando o objeto para geracao do formulario
+    @order = PagSeguro::Order.new(@cart.id)
+
+    # adicionando os produtos do pedido ao objeto do formulario
+    @cart.line_items.each do |line_item|
+      # Estes sao os atributos necessarios. Por padrao, peso (:weight) eh definido para 0,
+      # quantidade eh definido como 1 e frete (:shipping) eh definido como 0.
+      @order.add :id => line_item.product.id, :price => line_item.price, :description => line_item.product.title
+    end
+    @order.billing = {
+        :name                  => @cart.user.nome,
+        :email                 => @cart.user.email,
+        :phone_number          => @cart.user.telefone
+    }
+  end
 
   def add
     @cart.save if @cart.new_record?
@@ -22,14 +41,27 @@ class CartController < ApplicationController
   end
 
   def checkout
+    @site = Site.find(current_site)
     @cart.checkout!
     session.delete(:cart_id)
-    flash[:notice] = "Thank you for your purchase! We will ship it shortly!"
-    redirect_to "/"
+    flash[:notice] = "Pedido efetuado com sucesso."
+  end
+
+  def confirm
+    return unless request.post?
+    pagseguro_notification do |notification|
+      Rails.logger.info notification.params["TransacaoID"]
+      @order = Order.find(notification.params["Referencia"])
+      @order.payment_status = notification.status
+      @order.payment_method = notification.payment_method
+      @order.payment_date = notification.processed_at
+      @order.payment_id = notification.params["TransacaoID"]
+      @order.save
+    end
+    render :nothing => true
   end
 
   protected
-
   def find_cart
     @cart = session[:cart_id] ? Order.find(session[:cart_id]) : current_user.orders.build
   end

@@ -16,7 +16,7 @@ ActiveAdmin.register Order do
 
   index do
     column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
-    column("State")                   {|order| status_tag(order.state) }
+    column("State")                   {|order| status_tag(order.payment_status) }
     column("Order Date", :created_at)
     column("Payment Date", :payment_date)
     column("Customer", :user, :sortable => :user_id)
@@ -26,8 +26,9 @@ ActiveAdmin.register Order do
   show do
     panel "Invoice" do
       attributes_table_for order do
-        row :payment_method
-        row :payment_status
+        row :payment_id       
+        row :pay_method
+        row :pay_status
         row :payment_date
         row :payment_plots
       end

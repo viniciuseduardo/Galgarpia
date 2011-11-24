@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
 
   usar_como_cpf :cpf
   has_many :orders, :dependent => :destroy
-
+  belongs_to :site
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :cpf, :nome, :endereco, :sexo, :data_nasc, :telefone, :celular, :email, :password, :password_confirmation
+  attr_accessible :cpf, :nome, :endereco, :sexo, :data_nasc, :telefone, :celular, :email, :password, :password_confirmation, :site_id
 
   attr_accessor :password
   before_save :prepare_password

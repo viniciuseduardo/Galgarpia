@@ -6,17 +6,17 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:login], params[:password])
     if user
       session[:user_id] = user.id
-      flash[:notice] = "Logged in successfully."
+      flash[:notice] = I18n.t "devise.sessions.signed_in"
       redirect_to_target_or_default("/")
     else
-      flash.now[:error] = "Invalid login or password."
+      flash.now[:error] = I18n.t "devise.failure.invalid"
       render :action => 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "You have been logged out."
+    flash[:notice] = I18n.t "devise.sessions.signed_out"
     redirect_to "/"
   end
 end

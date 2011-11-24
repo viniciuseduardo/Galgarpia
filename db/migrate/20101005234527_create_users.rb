@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :email, :null => false
       t.string  :password_hash, :null => false
       t.string  :password_salt
+      t.integer :site_id, :null => false
       t.timestamps
     end
   end

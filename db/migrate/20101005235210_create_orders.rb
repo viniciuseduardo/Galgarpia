@@ -7,7 +7,7 @@ class CreateOrders < ActiveRecord::Migration
       t.datetime :payment_date
       t.string  :payment_status, :default => "sem acao"
       t.integer :payment_plots
-      t.integer :payment_id
+      t.string :payment_id
       t.timestamps
     end
     add_index :orders, :user_id

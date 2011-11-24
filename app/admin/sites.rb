@@ -1,12 +1,12 @@
 ActiveAdmin.register Site do
-  actions :index, :show
 
   filter :nome
   
   index do
     column("Nome", :sortable => :nome) {|site| link_to "##{site.nome} ", admin_site_path(site) }
-    column :url
+    column :domain
     column :link_afiliados
+    default_actions
   end
   
   show do
@@ -16,6 +16,7 @@ ActiveAdmin.register Site do
         t.column("Price")       {|product| number_to_currency product.price }
         t.column("Total Sold")  {|product| Order.find_with_product(product).count.to_s }
         t.column("Total Sales Value"){|product| number_to_currency LineItem.where(:product_id => product.id).sum(:price) }
+        t.column(){|product| link_to "Remove", admin_product_path(product), :method => :delete, :confirm => "Quer remover esse produto?"}
       end
     end
 

@@ -1,0 +1,57 @@
+--- 
+"22": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "22"
+  item_valor_1: "10"
+  commit: Efetuar pagamento!
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  cliente_tel: 21 3835-4745
+  cliente_email: vinicius@videologinc.tv
+  item_id_1: "1"
+  item_descr_1: The Ruby Programming Language
+  cliente_nome: Vinicius Alves
+"25": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "25"
+  item_valor_1: "10"
+  commit: Efetuar pagamento!
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  cliente_tel: 21 3835-4745
+  cliente_email: vinicius@videologinc.tv
+  item_id_1: "1"
+  item_descr_1: The Ruby Programming Language
+  cliente_nome: Vinicius Alves
+"27": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "27"
+  item_valor_1: "10"
+  commit: Efetuar pagamento!
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  cliente_tel: 21 3835-4745
+  cliente_email: vinicius@videologinc.tv
+  item_id_1: "1"
+  item_descr_1: The Ruby Programming Language
+  cliente_nome: Vinicius Alves
+"21": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "21"
+  item_valor_1: "2375"
+  commit: Efetuar pagamento!
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  cliente_tel: 21 3835-4745
+  cliente_email: vinicius@videologinc.tv
+  item_id_1: "1"
+  item_descr_1: The Ruby Programming Language
+  cliente_nome: Vinicius Alves

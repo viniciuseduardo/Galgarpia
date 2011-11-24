@@ -1,0 +1,13 @@
+development: &development
+  developer: true
+  base: "http://localhost:3000"
+  return_to: "/cart/confirm"
+  email: user@example.com
+
+test:
+  <<: *development
+
+production:
+  authenticity_token: BD8C11484F3B48259B3DD793ED889A2A
+  email: contato@galgarpia.com.br
+  return_to: "/cart/checkout"

@@ -1,7 +1,7 @@
 class CreateSites < ActiveRecord::Migration
   def self.up
     create_table :sites do |t|
-      t.string :url
+      t.string :domain
       t.string :nome
       t.string :link_afiliados
       t.timestamps

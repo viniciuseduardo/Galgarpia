@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20111019040356) do
     t.datetime "payment_date"
     t.string   "payment_status",                               :default => "sem acao"
     t.integer  "payment_plots"
-    t.integer  "payment_id"
+    t.string   "payment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(:version => 20111019040356) do
   add_index "products", ["featured"], :name => "index_products_on_featured"
 
   create_table "sites", :force => true do |t|
-    t.string   "url"
+    t.string   "domain"
     t.string   "nome"
     t.string   "link_afiliados"
     t.datetime "created_at"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20111019040356) do
     t.string   "email",         :null => false
     t.string   "password_hash", :null => false
     t.string   "password_salt"
+    t.integer  "site_id",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

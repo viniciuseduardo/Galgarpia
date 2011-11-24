@@ -3,6 +3,7 @@
 <p>Already have an account? <%= link_to "Log in", login_path %>.</p>
 
 <%= semantic_form_for(@user, :validate => true) do |f| %>
+  <div><%= f.input :site_id, :as => :hidden, :value => session[:current_site_id] %></div>
 
   <div><%= f.input :nome %></div>
 

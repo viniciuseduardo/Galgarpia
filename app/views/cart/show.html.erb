@@ -23,8 +23,4 @@
 </table>
 
 <hr />
-<%= form_tag checkout_path, :style => "text-align: right" do |f| %>
-  <%= link_to "Continue Shopping", root_path %>
-  or
-  <%= submit_tag "Checkout Now!" %>
-<% end %>
+<%= pagseguro_form @order, :submit => "Efetuar pagamento!" %>

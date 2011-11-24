@@ -6,16 +6,31 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 #
-
+p "Truncando Tabelas"
+config = ActiveRecord::Base.configurations[RAILS_ENV]
+ActiveRecord::Base.establish_connection
+ActiveRecord::Base.connection.tables.each do |table|
+  p "TRUNCATE #{table}"
+  if table != "schema_migrations"
+    ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
+  end
+end
 # Create default admin user
-AdminUser.delete_all
+p "Criando Admin"
 AdminUser.create! do |a|
   a.email = 'admin@galgarpia.com'
   a.password = a.password_confirmation = 'q1w2e3'
 end
 
+#Create Sites
+p "Criando Sites"
+NB_SITES = 6
+NB_SITES.times do |n|
+  Site.create! :nome => "Site #{n + 1}", :link_afiliados => "http://afiliados#{n + 1}.local/"
+end
+
 # Create default user
-User.delete_all
+p "Criando Usuario"
 User.create! do |u|
   u.nome = 'Vinicius Alves'
   u.email = 'vinicius@videologinc.tv'
@@ -26,26 +41,22 @@ User.create! do |u|
   u.telefone = "21 3835-4745"
   u.celular  = "21 7814-5667"
   u.password = u.password_confirmation = 'qawsedrf'
+  u.site_id = 1
 end
 
-#Create Sites
-NB_SITES = 6
-NB_SITES.times do |n|
-  Site.create! :nome => "Site #{n + 1}", :url => "http://vend#{n + 1}.local/", :link_afiliados => "http://afiliados#{n + 1}.local/"
-end
 
 # Load each product from the yaml file
-Product.delete_all
+p "Criando Produtos"
+i = 1
 YAML.load_file(File.expand_path("../seeds/products.yml", __FILE__)).each do |product|
-  site_id = rand(NB_SITES - 1) + 1
-  site = Site.find(site_id)
+  site = Site.find(i)
   Product.create! product.merge(:site => site)
+  i += 1
 end
 
 NB_PRODUCTS = Product.count
-
 # Create 20 Orders
-Order.delete_all
+p "Criando Orders"
 NB_ORDERS = 20
 NB_ORDERS.times do
   user = User.first

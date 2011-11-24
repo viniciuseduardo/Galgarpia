@@ -6,8 +6,11 @@ class Order < ActiveRecord::Base
   scope :in_progress, where("orders.payment_status IN ('em andamento','enviado')")
   scope :complete, where("orders.payment_status = 'concluido'")
 
-  STATUS = ["sem acao", "em andamento", "enviado", "concluido"]
-  METHOD = ["boleto", "cartao de credito", "cartao de debito", "transferencia"]
+  STATUS = {"no acao" => "Sem Ação", "completed" => "Completo", "pending" => "Pendente", "Aguardando pagamento" => "Aprovado", "verifying" => "Em análise", "canceled" => "Cancelado", "refunded" => "Devolvido" }
+  METHOD = {"invoice" => "Boleto", "credit_card" => "Cartão de Crédito", "pagseguro" => "PagSeguro", "online_transfer" => "Transferencia Online"}
+  
+  attr_accessor :pay_method, :pay_status
+  attr_accessible :user_id, :total_price, :payment_method, :payment_date, :payment_status, :payment_plots, :payment_id
   def self.find_with_product(product)
     return [] unless product
     includes(:line_items).
@@ -16,7 +19,7 @@ class Order < ActiveRecord::Base
   end
 
   def checkout!
-    self.payment_date = Time.now
+    self.payment_status = Order::STATUS["no acao"]
     self.save
   end
 
@@ -25,8 +28,12 @@ class Order < ActiveRecord::Base
     save!
   end
 
-  def state
-    payment_status
+  def pay_status
+    STATUS["#{payment_status}"]
+  end
+  
+  def pay_method
+    METHOD["#{self.payment_method}"]
   end
 
   def display_name
