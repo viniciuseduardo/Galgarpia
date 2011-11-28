@@ -6,7 +6,7 @@ class Order < ActiveRecord::Base
   scope :in_progress, where("orders.payment_status IN ('em andamento','enviado')")
   scope :complete, where("orders.payment_status = 'concluido'")
 
-  STATUS = {"no acao" => "Sem Ação", "completed" => "Completo", "pending" => "Pendente", "Aguardando pagamento" => "Aprovado", "verifying" => "Em análise", "canceled" => "Cancelado", "refunded" => "Devolvido" }
+  STATUS = {"no acao" => "Sem Ação", "completed" => "Completo", "pending" => "Aguardando pagamento", "approved" => "Aprovado", "verifying" => "Em análise", "canceled" => "Cancelado", "refunded" => "Devolvido" }
   METHOD = {"invoice" => "Boleto", "credit_card" => "Cartão de Crédito", "pagseguro" => "PagSeguro", "online_transfer" => "Transferencia Online"}
   
   attr_accessor :pay_method, :pay_status
@@ -18,8 +18,9 @@ class Order < ActiveRecord::Base
       order("orders.payment_date DESC")
   end
 
-  def checkout!
-    self.payment_status = Order::STATUS["no acao"]
+  def checkout(transaction_id)!
+    self.payment_id = transaction_id
+    self.payment_status = Order::STATUS["pending"]
     self.save
   end
 

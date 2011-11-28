@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-set :application, "ecomerce"
+set :application, "ecommerce"
 set :keep_releases, "3"
 
 # git options
@@ -74,5 +74,5 @@ production:
 end
 
 after "deploy:setup", "init:production_database_yml"
-after "deploy:cold", "init:import_data"
+# after "deploy:cold", "init:import_data"
 after "deploy", "init:log_clear"

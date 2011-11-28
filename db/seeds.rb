@@ -54,34 +54,34 @@ YAML.load_file(File.expand_path("../seeds/products.yml", __FILE__)).each do |pro
   i += 1
 end
 
-NB_PRODUCTS = Product.count
-# Create 20 Orders
-p "Criando Orders"
-NB_ORDERS = 20
-NB_ORDERS.times do
-  user = User.first
-  order = user.orders.create
-  order.payment_method = Order::METHOD[rand(Order::METHOD.length)]
-  order.payment_status = Order::STATUS[rand(Order::STATUS.length)]
-  day = rand(30) + 1  
-  order.created_at = day.days.ago - 1
-  if order.payment_status == "concluido"
-    order.payment_date = day.days.ago
-  end  
-  if order.payment_method == "cartao de credito"
-    order.payment_plots = rand(5) + 1
-  end
-  nb_items = 1
-
-  nb_items.times do
-    product_id = rand(NB_PRODUCTS - 1) + 1
-    product = Product.find(product_id)
-    LineItem.create do |l|
-      l.order = order
-      l.product = product
-      l.price = product.price
-    end
-  end
-
-  order.recalculate_price!
-end
+# NB_PRODUCTS = Product.count
+# # Create 20 Orders
+# p "Criando Orders"
+# NB_ORDERS = 20
+# NB_ORDERS.times do
+#   user = User.first
+#   order = user.orders.create
+#   order.payment_method = Order::METHOD[rand(Order::METHOD.length)]
+#   order.payment_status = Order::STATUS[rand(Order::STATUS.length)]
+#   day = rand(30) + 1  
+#   order.created_at = day.days.ago - 1
+#   if order.payment_status == "concluido"
+#     order.payment_date = day.days.ago
+#   end  
+#   if order.payment_method == "cartao de credito"
+#     order.payment_plots = rand(5) + 1
+#   end
+#   nb_items = 1
+# 
+#   nb_items.times do
+#     product_id = rand(NB_PRODUCTS - 1) + 1
+#     product = Product.find(product_id)
+#     LineItem.create do |l|
+#       l.order = order
+#       l.product = product
+#       l.price = product.price
+#     end
+#   end
+# 
+#   order.recalculate_price!
+# end
