@@ -18,7 +18,7 @@ class Order < ActiveRecord::Base
       order("orders.payment_date DESC")
   end
 
-  def checkout(transaction_id)!
+  def checkout(transaction_id)
     self.payment_id = transaction_id
     self.payment_status = Order::STATUS["pending"]
     self.save

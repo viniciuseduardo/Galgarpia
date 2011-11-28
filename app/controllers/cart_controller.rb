@@ -42,7 +42,7 @@ class CartController < ApplicationController
 
   def checkout
     @site = Site.find(current_site)
-    @cart.checkout!
+    @cart.checkout(params["transaction_id"])
     session.delete(:cart_id)
     flash[:notice] = "Pedido efetuado com sucesso."
   end
