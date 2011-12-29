@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
-#
 p "Truncando Tabelas"
 config = ActiveRecord::Base.configurations[RAILS_ENV]
 ActiveRecord::Base.establish_connection
@@ -26,7 +18,9 @@ end
 p "Criando Sites"
 NB_SITES = 6
 NB_SITES.times do |n|
-  Site.create! :nome => "Site #{n + 1}", :link_afiliados => "http://afiliados#{n + 1}.local/"
+  texto = Faker::HTMLIpsum.p(10)
+  texto << Faker::HTMLIpsum.a
+  Site.create! :nome => "Site #{n + 1}", :link_afiliados => "http://afiliados#{n + 1}.local/", :texto_inicial => texto
 end
 
 # Create default user

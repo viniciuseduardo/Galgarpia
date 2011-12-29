@@ -5,7 +5,7 @@ class CreateOrders < ActiveRecord::Migration
       t.decimal :total_price, :precision => 8, :scale => 2, :default => 0      
       t.string :payment_method
       t.datetime :payment_date
-      t.string  :payment_status, :default => "sem acao"
+      t.string  :payment_status
       t.integer :payment_plots
       t.string :payment_id
       t.timestamps

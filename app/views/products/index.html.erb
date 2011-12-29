@@ -1,8 +1,10 @@
 <% @products.each do |product| %>
   <div class="product">
-    <%= link_to image_tag("products/" + product.image_file_name), product_path(product) %>
-    <h2><%= link_to product.title, product_path(product) %></h2>
+    <%= radio_button_tag("id", product.id, false) %>	
+    <%= image_tag("products/" + product.image_file_name) %>
+    <h2><%= product.title %></h2>
   </div>
 <% end %>
-
+<div id="div-button">
+</div>
 <div style="clear:both"></div>

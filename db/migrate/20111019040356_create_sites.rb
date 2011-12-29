@@ -3,6 +3,7 @@ class CreateSites < ActiveRecord::Migration
     create_table :sites do |t|
       t.string :domain
       t.string :nome
+      t.text :texto_inicial
       t.string :link_afiliados
       t.timestamps
     end

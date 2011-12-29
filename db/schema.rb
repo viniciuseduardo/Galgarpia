@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20111019040356) do
     t.decimal  "total_price",    :precision => 8, :scale => 2, :default => 0.0
     t.string   "payment_method"
     t.datetime "payment_date"
-    t.string   "payment_status",                               :default => "sem acao"
+    t.string   "payment_status"
     t.integer  "payment_plots"
     t.string   "payment_id"
     t.datetime "created_at"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20111019040356) do
   create_table "sites", :force => true do |t|
     t.string   "domain"
     t.string   "nome"
+    t.text     "texto_inicial"
     t.string   "link_afiliados"
     t.datetime "created_at"
     t.datetime "updated_at"

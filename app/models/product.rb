@@ -10,5 +10,5 @@ class Product < ActiveRecord::Base
   validates_presence_of :price
   validates_presence_of :image_file_name
 
-  attr_accessible :title, :price, :image_file_name, :site
+  attr_accessible :title, :price, :image_file_name, :site, :site_id
 end

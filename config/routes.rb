@@ -1,5 +1,7 @@
 ActiveadminDepot::Application.routes.draw do
 
+  get "home/index"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -18,5 +20,5 @@ ActiveadminDepot::Application.routes.draw do
   resources :users
   resources :products
 
-  root :to => "products#index"
+  root :to => "home#index"
 end

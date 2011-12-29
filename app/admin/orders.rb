@@ -28,7 +28,7 @@ ActiveAdmin.register Order do
       attributes_table_for order do
         row :payment_id       
         row :pay_method
-        row :pay_status
+        row :payment_status
         row :payment_date
         row :payment_plots
       end

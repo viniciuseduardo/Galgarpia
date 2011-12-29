@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
   METHOD = {"invoice" => "Boleto", "credit_card" => "Cartão de Crédito", "pagseguro" => "PagSeguro", "online_transfer" => "Transferencia Online"}
   
   attr_accessor :pay_method, :pay_status
-  attr_accessible :user_id, :total_price, :payment_method, :payment_date, :payment_status, :payment_plots, :payment_id
+  attr_accessible :user_id, :total_price, :payment_method, :payment_date, :payment_status, :payment_plots, :payment_id, :line_items
   def self.find_with_product(product)
     return [] unless product
     includes(:line_items).
@@ -20,7 +20,7 @@ class Order < ActiveRecord::Base
 
   def checkout(transaction_id)
     self.payment_id = transaction_id
-    self.payment_status = Order::STATUS["pending"]
+    self.payment_status = Order::STATUS["no acao"]
     self.save
   end
 
@@ -30,7 +30,7 @@ class Order < ActiveRecord::Base
   end
 
   def pay_status
-    STATUS["#{payment_status}"]
+    STATUS["#{self.payment_status}"]
   end
   
   def pay_method

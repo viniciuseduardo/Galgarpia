@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Ecommerce" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Galgarpia" %></title>
     <%= stylesheet_link_tag "application" %>
 	<%= stylesheet_link_tag 'formtastic' %>
 	<!--[if IE 6]><%= stylesheet_link_tag 'formtastic_ie6' %><![endif]-->
@@ -11,17 +11,7 @@
   </head>
   <body>
     <div id="container">
-      <div id="auth">
-        <% if logged_in? %>
-          Welcome <%= current_user.email %>! Not you?
-          <%= link_to "Log out", logout_path %>
-        <% else %>
-          <%= link_to "Sign up", signup_path %> or
-          <%= link_to "Log in", login_path %>.
-        <% end %>
-      </div>
-      
-      <h1><a href="/">Ecommerce</a></h1>
+      <h1><a href="/">Galgarpia</a></h1>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
