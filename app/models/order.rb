@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
   has_many :line_items, :dependent => :destroy
-  belongs_to :user
+  belongs_to :customer
 
   scope :no_action, where("orders.payment_status = 'sem acao'")
   scope :in_progress, where("orders.payment_status IN ('em andamento','enviado')")
@@ -20,7 +20,6 @@ class Order < ActiveRecord::Base
 
   def checkout(transaction_id)
     self.payment_id = transaction_id
-    self.payment_status = Order::STATUS["no acao"]
     self.save
   end
 

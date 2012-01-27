@@ -1,4 +1,4 @@
-ActiveAdmin.register User, :as => "Customer" do
+ActiveAdmin.register Customer, :as => "Customer" do
   filter :nome
   filter :email
   filter :cpf  

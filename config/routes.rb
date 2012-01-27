@@ -13,11 +13,6 @@ ActiveadminDepot::Application.routes.draw do
   match "cart/confirm" => "cart#confirm", :as => :confirm
   post "pagseguro_developer", :to => "pag_seguro/developer#create"
 
-  match 'signup' => 'users#new', :as => :signup
-  match 'logout' => 'sessions#destroy', :as => :logout
-  match 'login' => 'sessions#new', :as => :login
-  resources :sessions
-  resources :users
   resources :products
 
   root :to => "home#index"
