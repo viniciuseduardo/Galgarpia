@@ -38,7 +38,7 @@ production:
   database: galgarpia
   pool: 5
   username: root
-  password:
+  password:la01ks
   socket: /var/run/mysqld/mysqld.sock
 
 cucumber:
