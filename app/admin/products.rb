@@ -30,10 +30,10 @@ ActiveAdmin.register Product do
     end
   end
 
-  sidebar :recent_orders, :only => :show do
-    Order.find_with_product(resource).limit(5).collect do |order|
-      auto_link(order)
-    end.join(content_tag("br")).html_safe
-  end
+  # sidebar :recent_orders, :only => :show do
+  #   Order.find_with_product(resource).limit(5).collect do |order|
+  #     auto_link(order)
+  #   end.join(content_tag("br")).html_safe
+  # end
 
 end
