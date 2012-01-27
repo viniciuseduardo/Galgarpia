@@ -39,7 +39,6 @@ production:
   pool: 5
   username: root
   password:la01ks
-  socket: /var/run/mysqld/mysqld.sock
 
 cucumber:
   <<: *test
