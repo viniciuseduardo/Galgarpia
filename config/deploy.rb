@@ -38,31 +38,8 @@ namespace :deploy do
   end
 end
 
-desc "Link in the production database.yml"
-task :after_update_code do
-  run "ln -nfs #{deploy_to}/#{shared_dir}/config/database.yml #{release_path}/config/database.yml"
-end
-
 # Only runs this task after deploy:setup
-# Used to create a new config/database.yml which differs from the repository
 namespace :init do
-  desc "Create production-only database.yml"
-  task :production_database_yml do
-    database_configuration =<<-EOF
-production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: galgarpia_production
-  pool: 5
-  host: 127.0.0.1
-  username: root
-  password:
-    EOF
-
-    run "mkdir -p #{shared_path}/config"
-    put database_configuration, "#{shared_path}/config/database.yml"
-  end
   desc "Importa dados Teste"
   task :import_data do
     run "cd  #{current_path}; bundle exec rake RAILS_ENV=production  db:seed"
@@ -73,6 +50,5 @@ production:
   end
 end
 
-after "deploy:setup", "init:production_database_yml"
 # after "deploy:cold", "init:import_data"
 after "deploy", "init:log_clear"
