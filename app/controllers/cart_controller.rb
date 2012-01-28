@@ -40,11 +40,11 @@ class CartController < ApplicationController
   def confirm
     return unless request.post?
     pagseguro_notification do |notification|
-      @user = User.find_by_email(notification.buyer.email)
-      if @user.nil? 
-        @user = User.new
-        @user.email = notification.buyer.email
-        @user.endereco = 
+      @customer = Customer.find_by_email(notification.buyer.email)
+      if @customer.nil? 
+        @customer = Customer.new
+        @customer.email = notification.buyer.email
+        @customer.nome  = notification.buyer.name
       end
       @order = Order.find(notification.params["Referencia"])
       @order.payment_status = notification.status
