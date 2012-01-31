@@ -18,7 +18,7 @@ ActiveAdmin.register Product, :as => "Produtos" do
         image_tag("products/" + product.image_file_name)
       end
     end
-    a truncate(product.title), :href => admin_produtos_path(product)
+    a truncate(product.title), :href => admin_produto_path(product)
   end
 
   show :title => :title
