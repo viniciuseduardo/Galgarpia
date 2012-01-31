@@ -39,7 +39,8 @@ class CartController < ApplicationController
 
   def confirm
     return unless request.post?
-    pagseguro_notification do |notification|
+    pagseguro_notification() do |notification|
+      notification.valid?(:force => true)
       @customer = Customer.find_by_email(notification.buyer[:email])
       if @customer.nil?
         Rails.logger.info notification.buyer.inspect

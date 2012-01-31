@@ -29,7 +29,7 @@ ActiveAdmin.register Order, :as => "Pedidos" do
         row("Identificador PagSeguro") { pedido.payment_id }
         row("Forma de Pagamento"){ pedido.pay_method }
         row("Numero de Parcelas"){ pedido.payment_plots } if !pedido.payment_plots.nil?        
-        row("Status do Pedido"){ pedido.payment_status }
+        row("Status do Pedido"){ pedido.pay_status }
         row("Data Pagamento"){ pedido.payment_date }
         row("Ultima Atualização"){ pedido.updated_at }        
       end
