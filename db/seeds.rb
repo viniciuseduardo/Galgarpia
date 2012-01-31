@@ -43,7 +43,6 @@ Customer.create! do |u|
   u.data_nasc = "1986-04-12"
   u.telefone = "21 3835-4745"
   u.celular  = "21 7814-5667"
-  u.site_id = 1
 end
 
 
