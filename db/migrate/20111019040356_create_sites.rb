@@ -7,6 +7,7 @@ class CreateSites < ActiveRecord::Migration
       t.string :link_afiliados
       t.timestamps
     end
+    add_index :sites, :domain
   end
 
   def self.down

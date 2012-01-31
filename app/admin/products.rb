@@ -1,4 +1,4 @@
-ActiveAdmin.register Product do
+ActiveAdmin.register Product, :as => "Produtos" do
   filter :site_nome, :as => :string, :label => 'Site'
   
   scope :all, :default => true
@@ -14,11 +14,11 @@ ActiveAdmin.register Product do
 
   index :as => :grid do |product|
     div do
-      a :href => admin_product_path(product) do
+      a :href => admin_produtos_path(product) do
         image_tag("products/" + product.image_file_name)
       end
     end
-    a truncate(product.title), :href => admin_product_path(product)
+    a truncate(product.title), :href => admin_produtos_path(product)
   end
 
   show :title => :title

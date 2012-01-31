@@ -2,15 +2,18 @@ class Order < ActiveRecord::Base
   has_many :line_items, :dependent => :destroy
   belongs_to :customer
 
-  scope :no_action, where("orders.payment_status = 'sem acao'")
-  scope :in_progress, where("orders.payment_status IN ('em andamento','enviado')")
-  scope :complete, where("orders.payment_status = 'concluido'")
+  scope :no_action, where("orders.payment_status = 'no action'")
+  scope :in_progress, where("orders.payment_status IN ('pending','verifying')")
+  scope :approved, where("orders.payment_status = 'approved'")
+  scope :complete, where("orders.payment_status = 'completed'")
+  scope :canceled, where("orders.payment_status = 'canceled'")
+  scope :refunded, where("orders.payment_status = 'refunded'")
 
-  STATUS = {"no acao" => "Sem Ação", "completed" => "Completo", "pending" => "Aguardando pagamento", "approved" => "Aprovado", "verifying" => "Em análise", "canceled" => "Cancelado", "refunded" => "Devolvido" }
+  STATUS = {"no action" => "Sem Ação", "completed" => "Completo", "pending" => "Aguardando pagamento", "approved" => "Aprovado", "verifying" => "Em análise", "canceled" => "Cancelado", "refunded" => "Devolvido" }
   METHOD = {"invoice" => "Boleto", "credit_card" => "Cartão de Crédito", "pagseguro" => "PagSeguro", "online_transfer" => "Transferencia Online"}
   
   attr_accessor :pay_method, :pay_status
-  attr_accessible :user_id, :total_price, :payment_method, :payment_date, :payment_status, :payment_plots, :payment_id, :line_items
+  attr_accessible :customer_id, :total_price, :payment_method, :payment_date, :payment_status, :payment_plots, :payment_id, :line_items
   def self.find_with_product(product)
     return [] unless product
     includes(:line_items).
@@ -38,7 +41,7 @@ class Order < ActiveRecord::Base
 
   def display_name
     ActionController::Base.helpers.number_to_currency(total_price) + 
-      " - Order ##{id} (#{user.nome})"
+      " - Pedido ##{id} (#{user.nome})"
   end
 
 end

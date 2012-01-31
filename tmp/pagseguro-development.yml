@@ -1,12 +1,901 @@
---- 
-"1": !map:ActiveSupport::HashWithIndifferentAccess 
+--- !map:ActiveSupport::HashWithIndifferentAccess 
+"15": !map:ActiveSupport::HashWithIndifferentAccess 
   tipo: CP
-  encoding: UTF-8
-  ref_transacao: "1"
-  item_valor_1: "2375"
-  commit: Efetuar pagamento!
+  item_valor_1: 2261
+  ref_transacao: "15"
   moeda: BRL
   item_quant_1: "1"
   email_cobranca: user@example.com
-  item_id_1: "1"
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"36": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "36"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"80": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "80"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
   item_descr_1: The Ruby Programming Language
+"8": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "8"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"57": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "57"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"78": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "78"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"99": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "99"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"16": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "16"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"37": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "37"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"60": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "60"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"81": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "81"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"9": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "9"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"58": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "58"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"79": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "79"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"17": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "17"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"40": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "40"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"38": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "38"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"61": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "61"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"82": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "82"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"59": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "59"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"20": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "20"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"18": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "18"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"41": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "41"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"39": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "39"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"62": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "62"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"83": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "83"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"21": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "21"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"19": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "19"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"42": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "42"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"63": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "63"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"84": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "84"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"43": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "43"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"64": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "64"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"85": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "85"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"65": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "65"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"86": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "86"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"22": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "22"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"87": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "87"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"23": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "23"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"44": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "44"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"24": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "24"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"45": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "45"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"66": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "66"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"25": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "25"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"46": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "46"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"90": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "90"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"67": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "67"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"88": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "88"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"26": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "26"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"70": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "70"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"47": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "47"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"91": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "91"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"68": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "68"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"89": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "89"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"27": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "27"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"50": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "50"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"71": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "71"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"48": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "48"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"92": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "92"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"69": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "69"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"49": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "49"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"30": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "30"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"1": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "1"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"28": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "28"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"51": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "51"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"72": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "72"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"93": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "93"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"94": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "94"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"2": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "2"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"52": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "52"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"10": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "10"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"31": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "31"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"29": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "29"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"73": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "73"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"95": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "95"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"53": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "53"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"32": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "32"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"3": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "3"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"74": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "74"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"96": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "96"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"75": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "75"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"4": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "4"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"54": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "54"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"11": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "11"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"97": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "97"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"12": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "12"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"76": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "76"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"5": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "5"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"33": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "33"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"100": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "100"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"98": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "98"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"6": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "6"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"13": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2799
+  ref_transacao: "13"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 5
+  item_descr_1: The Well-Grounded Rubyist
+"34": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "34"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"55": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "55"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"
+"77": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2375
+  ref_transacao: "77"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 1
+  item_descr_1: The Ruby Programming Language
+"7": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "7"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"14": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2820
+  ref_transacao: "14"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 2
+  item_descr_1: "Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)"
+"35": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2050
+  ref_transacao: "35"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 4
+  item_descr_1: "Metaprogramming Ruby: Program Like the Ruby Pros"
+"56": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_valor_1: 2261
+  ref_transacao: "56"
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: 3
+  item_descr_1: "Beginning Ruby: From Novice to Professional"

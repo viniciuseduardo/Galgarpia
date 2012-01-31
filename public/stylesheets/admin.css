@@ -2,7 +2,9 @@
 .icon {
   display: none !important; 
 }
-.status.concluido { background: #8daa92; }
-.status.enviado { background: #87CEEB; }
-.status.em_andamento { background: #e29b20; }
-.status.sem_acao { background: #d45f53; }
+.status.completed { background: #008B00; }
+.status.approved { background: #BFEFFF; }
+.status.pending, .status.verifying { background: #EEDD82; }
+.status.no_action { background: #D3D3D3; }
+.status.canceled { background: #FF0000; }
+.status.refunded { background: #B0E2FF; }

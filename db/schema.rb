@@ -55,12 +55,18 @@ ActiveRecord::Schema.define(:version => 20120127071930) do
     t.string   "complemento"
     t.string   "cidade"
     t.string   "estado"
+    t.string   "cep"
     t.string   "telefone"
     t.string   "celular"
     t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "customers", ["cpf"], :name => "index_customers_on_cpf"
+  add_index "customers", ["email", "site_id", "cpf"], :name => "index_customers_on_email_and_site_id_and_cpf", :unique => true
+  add_index "customers", ["email"], :name => "index_customers_on_email"
+  add_index "customers", ["site_id"], :name => "index_customers_on_site_id"
 
   create_table "line_items", :force => true do |t|
     t.integer  "order_id"
@@ -74,7 +80,7 @@ ActiveRecord::Schema.define(:version => 20120127071930) do
   add_index "line_items", ["product_id"], :name => "index_line_items_on_product_id"
 
   create_table "orders", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "customer_id"
     t.decimal  "total_price",    :precision => 8, :scale => 2, :default => 0.0
     t.string   "payment_method"
     t.datetime "payment_date"
@@ -85,10 +91,11 @@ ActiveRecord::Schema.define(:version => 20120127071930) do
     t.datetime "updated_at"
   end
 
+  add_index "orders", ["customer_id"], :name => "index_orders_on_customer_id"
   add_index "orders", ["payment_date"], :name => "index_orders_on_payment_date"
+  add_index "orders", ["payment_id"], :name => "index_orders_on_payment_id"
   add_index "orders", ["payment_method"], :name => "index_orders_on_payment_method"
   add_index "orders", ["payment_status"], :name => "index_orders_on_payment_status"
-  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
 
   create_table "products", :force => true do |t|
     t.integer  "site_id"
@@ -115,20 +122,6 @@ ActiveRecord::Schema.define(:version => 20120127071930) do
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "nome",          :null => false
-    t.string   "cpf",           :null => false
-    t.date     "data_nasc",     :null => false
-    t.text     "endereco",      :null => false
-    t.string   "sexo",          :null => false
-    t.string   "telefone",      :null => false
-    t.string   "celular"
-    t.string   "email",         :null => false
-    t.string   "password_hash", :null => false
-    t.string   "password_salt"
-    t.integer  "site_id",       :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "sites", ["domain"], :name => "index_sites_on_domain"
 
 end

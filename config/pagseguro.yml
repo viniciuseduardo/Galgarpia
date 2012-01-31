@@ -1,6 +1,6 @@
 development: &development
   developer: true
-  base: "http://localhost:3000"
+  base: "http://localhost:3001"
   return_to: "/cart/confirm"
   email: user@example.com
 
