@@ -1,0 +1,7 @@
+<%= semantic_form_for(@pedido, :url => admin_pedido_path(@pedido), :html => {:class => "form-envio"}) do |f| %>
+	<input name="_method" type="hidden" value="put">
+	<%= f.input :delivery_number, :label => "Numero Envio" %>
+	<%= f.input :delivery_date, :as => :string, :label => "Data de Envio", :input_html => {:class => 'datepicker'}  %>
+	<%= f.input :delivery_text, :as => :text, :label => "Obs", :input_html => {:class => 'text-envio'} %>
+    <%= f.submit "Salvar" %>
+<% end %>
