@@ -44,7 +44,6 @@ class CartController < ApplicationController
       notification.valid?(:force => true)
       @customer = Customer.find_by_email(notification.buyer[:email])
       if @customer.nil?
-        Rails.logger.info notification.buyer.inspect
         @customer = Customer.new
         @customer.email       = notification.buyer[:email]
         @customer.nome        = notification.buyer[:name]
@@ -64,6 +63,11 @@ class CartController < ApplicationController
       @order.payment_date = notification.processed_at
       @order.payment_id = notification.params["TransacaoID"]
       @order.save
+      if @order.payment_status == :completed
+        Rails.logger.info "http://www.clicklucro.com.br/API/scripts/approve_commission.php?secret=1396296735&order_number=#{@order.id}"
+        uri = URI("http://www.clicklucro.com.br/API/scripts/approve_commission.php?secret=1396296735&order_number=#{@order.id}")
+        Net::HTTP.get(uri)
+      end
     end
     render :nothing => true
   end

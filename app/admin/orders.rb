@@ -2,12 +2,13 @@ ActiveAdmin.register Order, :as => "Pedidos" do
   actions :index, :show, :update
 
   filter :id
+  filter :site_id, :as => :select, :collection => proc { Site.all }
   filter :customer_nome, :as => :string, :label => 'Name do Cliente'
   filter :customer_email, :as => :string, :label => 'Email do Cliente'  
-  #filter :payment_status, :as => :select, :collection => Order::METHOD
+  filter :payment_method, :as => :select, :label => "Tipo de Pagamento", :collection => proc { Order::METHOD.invert }
   filter :created_at, :label => 'Data da Compra'
   filter :payment_date, :label => 'Data de Pagamento'
-  filter :delivery_status, :label => 'Status Entrega'  
+  filter :delivery_status, :as => :select, :label => 'Status Entrega', :collection => proc { Order::DELIVERY.invert }
 
   scope :all, :default => true
   scope "Sem Ação", :no_action
@@ -18,10 +19,11 @@ ActiveAdmin.register Order, :as => "Pedidos" do
 
   index do
     column("ID", :sortable => :id) {|order| link_to "##{order.id} ", admin_pedido_path(order) }
+    column("Site"){ |order| order.site.alias unless order.site.nil? }
     column("Data de Compra", :created_at)
     column("Status Pgto") {|order| status_tag(order.pay_status, nil, :class => order.payment_status) }
     column("Tipo de Pgto") {|order| order.pay_method }
-    column("Data de Pgto", :payment_date)    
+    column("Data de Pgto", :payment_date)
     column("Cliente"){ |order| order.customer.nome  unless  order.customer.nil? }
     column("Total") {|order| number_to_currency order.total_price }
     column("Status Envio") {|order| status_tag(order.status_delivery, nil, :class => order.status_delivery) }

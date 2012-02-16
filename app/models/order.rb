@@ -58,6 +58,7 @@ class Order < ActiveRecord::Base
   def change_status
     if !self.delivery_number.nil?
       self.delivery_status = 1
+      Envio.enviado(self).deliver
     end
   end
 end

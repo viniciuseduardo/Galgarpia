@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(:version => 20120127071930) do
   create_table "sites", :force => true do |t|
     t.string   "domain"
     t.string   "nome"
+    t.string   "alias"
     t.text     "texto_inicial"
     t.string   "link_afiliados"
     t.datetime "created_at"

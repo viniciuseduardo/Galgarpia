@@ -32,7 +32,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the controller.
-  config.authentication_method = false # Disabled for demo
+  config.authentication_method = :authenticate_admin_user! # Disabled for demo
 
 
   # == Current User
@@ -42,7 +42,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # to return the currently logged in user.
-  config.current_user_method = false # Disabled for demo
+  config.current_user_method = :current_admin_user # Disabled for demo
   
 
   # == Admin Notes
@@ -52,7 +52,7 @@ ActiveAdmin.setup do |config|
   # Admin notes are enabled by default, but can be disabled
   # by uncommenting this line:
   #
-  config.admin_notes = true
+  config.admin_notes = :true
 
 
   # == Controller Filters
