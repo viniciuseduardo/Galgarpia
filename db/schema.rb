@@ -58,15 +58,13 @@ ActiveRecord::Schema.define(:version => 20120127071930) do
     t.string   "cep"
     t.string   "telefone"
     t.string   "celular"
-    t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "customers", ["cpf"], :name => "index_customers_on_cpf"
-  add_index "customers", ["email", "site_id", "cpf"], :name => "index_customers_on_email_and_site_id_and_cpf", :unique => true
+  add_index "customers", ["email", "cpf"], :name => "index_customers_on_email_and_cpf", :unique => true
   add_index "customers", ["email"], :name => "index_customers_on_email"
-  add_index "customers", ["site_id"], :name => "index_customers_on_site_id"
 
   create_table "line_items", :force => true do |t|
     t.integer  "order_id"
@@ -80,22 +78,30 @@ ActiveRecord::Schema.define(:version => 20120127071930) do
   add_index "line_items", ["product_id"], :name => "index_line_items_on_product_id"
 
   create_table "orders", :force => true do |t|
+    t.integer  "site_id"
     t.integer  "customer_id"
-    t.decimal  "total_price",    :precision => 8, :scale => 2, :default => 0.0
+    t.decimal  "total_price",     :precision => 8, :scale => 2, :default => 0.0
     t.string   "payment_method"
     t.datetime "payment_date"
     t.string   "payment_status"
     t.integer  "payment_plots"
     t.string   "payment_id"
+    t.string   "delivery_number"
+    t.datetime "delivery_date"
+    t.integer  "delivery_status",                               :default => 0
+    t.string   "delivery_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "orders", ["customer_id"], :name => "index_orders_on_customer_id"
+  add_index "orders", ["delivery_number"], :name => "index_orders_on_delivery_number"
+  add_index "orders", ["delivery_status"], :name => "index_orders_on_delivery_status"
   add_index "orders", ["payment_date"], :name => "index_orders_on_payment_date"
   add_index "orders", ["payment_id"], :name => "index_orders_on_payment_id"
   add_index "orders", ["payment_method"], :name => "index_orders_on_payment_method"
   add_index "orders", ["payment_status"], :name => "index_orders_on_payment_status"
+  add_index "orders", ["site_id"], :name => "index_orders_on_site_id"
 
   create_table "products", :force => true do |t|
     t.integer  "site_id"

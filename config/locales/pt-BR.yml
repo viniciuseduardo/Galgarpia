@@ -62,7 +62,7 @@
     formats:
       default: "%A, %d de %B de %Y, %H:%M h"
       short: "%d/%m, %H:%M h"
-      long: "%d de %B de %Y %H:%M"
+      long: "%d/%m/%Y"
     am: ''
     pm: ''
 

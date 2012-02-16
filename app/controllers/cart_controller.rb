@@ -4,6 +4,7 @@ class CartController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def add
+    @cart.site_id = current_site
     @cart.payment_status = "no action"
     @cart.save if @cart.new_record?
     session[:cart_id] = @cart.id
@@ -56,7 +57,7 @@ class CartController < ApplicationController
         @customer.telefone    = "#{notification.buyer[:phone][:area_code]} #{notification.buyer[:phone][:number]}"
         @customer.save
       end
-      @order = Order.find(notification.params["Referencia"])
+      @order = Order.find(notification.params["Referencia"])      
       @order.customer_id = @customer.id
       @order.payment_status = notification.status
       @order.payment_method = notification.payment_method

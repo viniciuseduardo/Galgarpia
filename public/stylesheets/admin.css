@@ -2,9 +2,33 @@
 .icon {
   display: none !important; 
 }
-.status.completed { background: #008B00; }
+.status.completed, .status.enviado { background: #008B00; }
 .status.approved { background: #BFEFFF; }
 .status.pending, .status.verifying { background: #EEDD82; }
 .status.no_action { background: #D3D3D3; }
 .status.canceled { background: #FF0000; }
 .status.refunded { background: #B0E2FF; }
+
+.form-envio .datepicker{
+    background: white url("/images/active_admin/datepicker/datepicker-input-icon.png") no-repeat 100% 7px;
+    padding-right: 2
+}
+.form-envio li{ 
+	list-style:none;
+	padding: 10px;
+}
+.form-envio li label{ 
+	display: block;
+	width: 20%;
+	float: left;
+	font-size: 1.0em;
+	font-weight: bold;
+	color: #5E6469;
+}
+.form-envio li input{ 
+	width:300px;
+}
+.form-envio li .text-envio{
+	width:300px;
+	height: 50px;
+}

@@ -1,2 +1,10 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+x Redirecionamento do www
+x Colocar botao Comprar Padrao com alert.
+Colocar aprovacao automatica de comissao.
+xFiltros de sites,email,status na pesquisa de pedidos
+xColocar campos de numero de rastreamento, observacao, data envio, status entrega.
+x Colocar dados completos do cliente no detalhe da compra.
+x Linkar pedido ao site que foi feito.
+x Alterar formato de data(dd/mm/aaaa)
+xAlterar listagem de pedidos(Nome, forma de pgto e status)
+xColocar autoincrement do banco em 1200

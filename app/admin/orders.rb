@@ -1,11 +1,13 @@
 ActiveAdmin.register Order, :as => "Pedidos" do
-  actions :index, :show
+  actions :index, :show, :update
 
   filter :id
   filter :customer_nome, :as => :string, :label => 'Name do Cliente'
-  filter :customer_cpf, :as => :string, :label => 'CPF do Cliente'  
-  filter :created_at
-  filter :payment_date
+  filter :customer_email, :as => :string, :label => 'Email do Cliente'  
+  #filter :payment_status, :as => :select, :collection => Order::METHOD
+  filter :created_at, :label => 'Data da Compra'
+  filter :payment_date, :label => 'Data de Pagamento'
+  filter :delivery_status, :label => 'Status Entrega'  
 
   scope :all, :default => true
   scope "Sem Ação", :no_action
@@ -16,15 +18,17 @@ ActiveAdmin.register Order, :as => "Pedidos" do
 
   index do
     column("ID", :sortable => :id) {|order| link_to "##{order.id} ", admin_pedido_path(order) }
-    column("Status") {|order| status_tag(order.pay_status, nil, :class => order.payment_status) }
     column("Data de Compra", :created_at)
-    column("Data de Pagamento", :payment_date)
-    column("Cliente", :customer, :sortable => :customer_id)
+    column("Status Pgto") {|order| status_tag(order.pay_status, nil, :class => order.payment_status) }
+    column("Tipo de Pgto") {|order| order.pay_method }
+    column("Data de Pgto", :payment_date)    
+    column("Cliente"){ |order| order.customer.nome  unless  order.customer.nil? }
     column("Total") {|order| number_to_currency order.total_price }
+    column("Status Envio") {|order| status_tag(order.status_delivery, nil, :class => order.status_delivery) }
   end
 
   show do
-    panel "Invoice" do
+    panel "Dados da Compra" do
       attributes_table_for pedido do
         row("Identificador PagSeguro") { pedido.payment_id }
         row("Forma de Pagamento"){ pedido.pay_method }
@@ -42,15 +46,20 @@ ActiveAdmin.register Order, :as => "Pedidos" do
         end
       end
     end
-
+    panel "Dados de Envio" do    
+      render :partial => "envio"
+    end
     active_admin_comments
   end
 
   sidebar "Informação do Cliente", :only => :show do 
     attributes_table_for pedido.customer do
       if !pedido.customer.nil?
-        row("Nome") { auto_link pedido.customer } 
+        row("Nome") { auto_link pedido.customer.nome } 
         row :email
+        row("Endereço") { "#{pedido.customer.endereco}, #{pedido.customer.complemento}"}
+        row :cidade
+        row :estado
         row :telefone
         row :celular
       end
